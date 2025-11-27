@@ -1,0 +1,30 @@
+{
+  "name": "@tspng/webpack-console-forward-plugin",
+  "version": "0.0.1",
+  "description": "A Webpack plugin that forwards browser console logs to the webpack dev server console",
+  "main": "index.js",
+  "keywords": [
+    "webpack",
+    "plugin",
+    "console",
+    "logging",
+    "development",
+    "debugging"
+  ],
+  "author": "Thomas Spreng <tspng@socket.ch>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tspng/webpack-console-forward-plugin"
+  },
+  "peerDependencies": {
+    "webpack": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ]
+}
