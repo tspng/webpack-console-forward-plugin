@@ -99,16 +99,8 @@ class ConsoleForwardServer {
       console.log(`[Console Forward] Server listening on port ${this.port}`);
     });
 
-    // Cleanup on process exit
-    const cleanup = () => {
-      if (this.server) {
-        this.server.close();
-      }
-    };
-
-    process.on("SIGINT", cleanup);
-    process.on("SIGTERM", cleanup);
-    process.on("exit", cleanup);
+    // Allow the process to exit naturally even if the server is listening
+    this.server.unref();
   }
 
   stop() {
