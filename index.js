@@ -267,7 +267,7 @@ class ConsoleForwardPlugin {
           this.server.start();
         }
         callback();
-      }
+      },
     );
 
     // Inject console forwarding code into all JS assets
@@ -289,20 +289,24 @@ class ConsoleForwardPlugin {
                 !source.includes("__CONSOLE_FORWARD_INJECTED__")
               ) {
                 const consoleForwardCode = generateConsoleForwardCode(
-                  this.options.port
+                  this.options.port,
                 );
                 source = consoleForwardCode + source;
                 compilation.updateAsset(
                   filename,
-                  new webpack.sources.RawSource(source)
+                  new webpack.sources.RawSource(source),
                 );
               }
             }
           });
-        }
+        },
       );
     });
   }
 }
+
+// Export internals for testing (underscore convention indicates private API)
+ConsoleForwardPlugin._ConsoleForwardServer = ConsoleForwardServer;
+ConsoleForwardPlugin._generateConsoleForwardCode = generateConsoleForwardCode;
 
 module.exports = ConsoleForwardPlugin;
