@@ -11,6 +11,9 @@
     "development",
     "debugging"
   ],
+  "scripts": {
+    "test": "jest"
+  },
   "author": "Thomas Spreng <tspng@socket.ch>",
   "license": "MIT",
   "repository": {
@@ -26,5 +29,8 @@
   "files": [
     "index.js",
     "README.md"
-  ]
+  ],
+  "devDependencies": {
+    "jest": "^30.0.0"
+  }
 }
